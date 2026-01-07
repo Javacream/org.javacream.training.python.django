@@ -1,1 +1,1 @@
-context = {'lastname': 'Sawitzki', 'firstname': 'Rainer'}
+context = {'user': {'lastname': 'Sawitzki', 'firstname': 'Rainer'}}
