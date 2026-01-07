@@ -15,3 +15,4 @@ Ressourcen für das am 7.1.2025 beginnende Seminar mit Anleitungen, Beispielen, 
   * Gerne jederzeit Kontakt über die angegebene Mail-Adresse aufnehmen!
 
 * [Digitales Flipchart](https://docs.google.com/presentation/d/1HbADU9Muz0N23fKmyIsxSHBr6_CSkfwvL04biuLUYlo/edit?usp=sharing)
+* [Aufzeichnungen](https://my.hidrive.com/share/bnsnrjjeie)
