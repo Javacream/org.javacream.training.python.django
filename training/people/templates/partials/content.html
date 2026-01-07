@@ -1,3 +1,5 @@
 <div>
-    <p>Content: nothing yet</p>
+    {% for person in people %}
+    <p>{{person.firstname}} {{person.lastname}}</p>
+    {% endfor %}
 </div>
