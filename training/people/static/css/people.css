@@ -1,0 +1,18 @@
+.header {
+    background-color: lightgreen;
+    font-size: large;
+    text-align: center;
+}
+
+.username {
+    text-align: right;
+}
+
+
+.footer {
+    background-color: green;
+    font-size: small;
+    text-align: center;
+    color: antiquewhite;
+
+}
