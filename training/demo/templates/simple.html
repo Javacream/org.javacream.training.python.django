@@ -4,6 +4,10 @@
         <title>Javacream</title>
     </head>
     <body>
+        {% for caption, link in links.items %}
+            <a href={{link}}>{{caption}}</a>
+        {% endfor %}
+
         <h1>Django App</h1>
         <p>our first simple html template</p>
     </body>

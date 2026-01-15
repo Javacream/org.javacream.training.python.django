@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="{% static 'css/people.css' %}">
     </head>
     <body>
+        {% for caption, link in links.items %}
+        <a href={{link}}>{{caption}}</a>
+        {% endfor %}
+
         {% include "partials/header.html" %}
         <hr/>
         {% include "partials/content.html" %}
