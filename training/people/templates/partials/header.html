@@ -1,4 +1,9 @@
+{% load static %}
 <div class="header">
     <p>{{app_name}}</p>
-    <p class="username">{{user.firstname}} {{user.lastname}}</p>
+    <div class="user">
+        <p>{{user.firstname}} {{user.lastname}}
+            <img id="user_logo" src="{% static 'user_lg.png' %}">
+        </p>
+    </div>
 </div>

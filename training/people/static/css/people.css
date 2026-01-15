@@ -4,7 +4,7 @@
     text-align: center;
 }
 
-.username {
+.user {
     text-align: right;
 }
 
@@ -15,4 +15,9 @@
     text-align: center;
     color: antiquewhite;
 
+}
+
+#user_logo {
+    width: 20px;
+    height: auto;
 }
