@@ -7,12 +7,17 @@ from .forms import NameForm
 
 def demo_http_template(request):
     return render(request, 'simple.html', {'links': global_links}) 
-def params(request: HttpRequest):
+def request_params(request: HttpRequest):
     context = {
         'name': request.GET.get('username')
     }
-    return render(request, 'params.html', context)
+    return render(request, 'request_params.html', context)
 
+def path_params(request: HttpRequest, id):
+    context = {
+        'name': str(id)
+    }
+    return render(request, 'path_params.html', context)
 
 
 def simple_form(request):
