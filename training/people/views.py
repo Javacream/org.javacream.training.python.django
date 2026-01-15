@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .people_service import get_context_for_people_list, get_context_for_person
+from .people_service import get_context_for_people_list, get_context_for_person, get_context
 from django.http import HttpRequest
 from .forms import PersonInputForm
 
@@ -11,10 +11,11 @@ def people(request: HttpRequest, page=''):
         context = get_context_for_person(id)
         context['page'] = 'person'
     else:
+        context = get_context()
         if page == 'peopleList':
             context = get_context_for_people_list()
             context['page'] = 'list'
-        else:
+        elif page == 'personInput':
             if request.method == "POST":
                 form = PersonInputForm(request.POST)
                 if form.is_valid():
@@ -24,7 +25,8 @@ def people(request: HttpRequest, page=''):
 
             else:
                 form = PersonInputForm()
-            context = {'page': 'person_input', 'form': form}
+            context['page'] = 'person_input'
+            context['form'] = form
     return render(request, 'people.html', context)
 
 
