@@ -1,0 +1,5 @@
+<div>
+    {% for person in people %}
+    <p>{{person.firstname}} {{person.lastname}} <a href='?id={{person.id}}'>details</a></p>
+    {% endfor %}
+</div>

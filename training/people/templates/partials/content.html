@@ -1,5 +1,8 @@
 <div>
-    {% for person in people %}
-    <p>{{person.firstname}} {{person.lastname}}</p>
-    {% endfor %}
+    {% if page == "list" %}
+        {% include "partials/people_list.html" %}
+    {% endif %}
+    {% if page == "person" %}
+        {% include "partials/person.html" %}
+    {% endif %}
 </div>
