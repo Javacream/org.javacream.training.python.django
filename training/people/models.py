@@ -8,3 +8,10 @@ class Person(models.Model):
 
     def __str__(self) -> str:
         return f"{self.firstname} {self.lastname}"
+
+class Address(models.Model):
+    street = models.CharField(max_length=200)
+    city = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.street}, {self.city}"

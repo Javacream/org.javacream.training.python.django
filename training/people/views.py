@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .people_service import get_context_for_people_list, get_context_for_person, get_context
+from .people_service import get_context_for_people_list, get_context_for_person, get_context, create_person
 from django.http import HttpRequest
 from .forms import PersonInputForm
 
@@ -21,7 +21,7 @@ def people(request: HttpRequest, page=''):
                 if form.is_valid():
                     first_name = form.cleaned_data["first_name"]
                     last_name = form.cleaned_data["last_name"]
-                    print(first_name, last_name)
+                    create_person(first_name, last_name)
 
             else:
                 form = PersonInputForm()

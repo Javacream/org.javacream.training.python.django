@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Person
+from .models import Person, Address
 
 
 class PersonCrudTest(TestCase):
@@ -55,3 +55,37 @@ class PersonCrudTest(TestCase):
         # Assert
         self.assertEqual(Person.objects.filter(pk=pk).count(), 0)
         self.assertEqual(Person.objects.count(), 0)
+
+class AddressModelCRUDTest(TestCase):
+
+    def setUp(self):
+        self.address = Address.objects.create(
+            street="Main Street 1",
+            city="Berlin"
+        )
+
+    def test_create_address(self):
+        address = Address.objects.create(
+            street="High Street 5",
+            city="Munich"
+        )
+        self.assertEqual(Address.objects.count(), 2)
+        self.assertEqual(address.city, "Munich")
+
+    def test_read_address(self):
+        address = Address.objects.get(id=self.address.id)
+        self.assertEqual(address.street, "Main Street 1")
+        self.assertEqual(address.city, "Berlin")
+
+    def test_update_address(self):
+        self.address.street = "Updated Street 99"
+        self.address.city = "Hamburg"
+        self.address.save()
+
+        updated = Address.objects.get(id=self.address.id)
+        self.assertEqual(updated.street, "Updated Street 99")
+        self.assertEqual(updated.city, "Hamburg")
+
+    def test_delete_address(self):
+        self.address.delete()
+        self.assertEqual(Address.objects.count(), 0)
