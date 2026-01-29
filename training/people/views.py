@@ -29,4 +29,13 @@ def people(request: HttpRequest, page=''):
             context['form'] = form
     return render(request, 'people.html', context)
 
-
+from django.views.generic import CreateView, ListView
+from .models import Address
+class AddressCreateView(CreateView):
+    model = Address
+    fields = ['street', 'city']
+    template_name = 'people/address_input.html'
+class AddressListView(ListView):
+    model = Address
+    context_object_name = 'addresses'
+    template_name = 'people/address_list.html'
